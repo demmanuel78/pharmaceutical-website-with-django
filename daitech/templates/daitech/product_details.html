@@ -1,0 +1,67 @@
+{% extends 'daitech/base.html' %}
+{% load static %}
+{% block pagetitle %}
+<title>Daitech Pharma | Product details</title>
+{% endblock  %}
+{% block body %}
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'products' %}">Our Products</a></li>
+      </ol>
+      <h2>Products Details</h2>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Portfolio Details Section ======= -->
+  <section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-8">
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+
+              <div class="swiper-slide">
+                <img src="{{product.pic1.url}}" alt="">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="{{product.pic2.url}}" alt="">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="{{product.pic3.url}}" alt="">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3>{{product.title}}</h3>
+            <ul>
+              <li><p><strong> Product Category</strong>: {{product.category}}</p></li>
+              <li><strong>Product Name</strong>: {{product.title}}</li>
+              <li><strong>Product Composition</strong>: {{product.composition}}</li>
+              <li><strong>Product Indication</strong>: {{product.indication}}</li>
+              <li><strong>Product Dosage</strong>: {{product.dosage}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Portfolio Details Section -->
+
+</main><!-- End #main -->
+
+{% endblock  %}

@@ -1,0 +1,113 @@
+{% extends 'daitech/base.html' %}
+{% load static %}
+{% block pagetitle %}
+<title>Daitech Pharma | Events</title>
+{% endblock %}
+{% block body %}
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li>Events</li>
+      </ol>
+      <h2>Events</h2>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Blog Section ======= -->
+  <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-8 entries">
+          {% for post in posts %}
+          <article class="entry">
+
+            <div class="entry-img">
+              <img src="{{post.pic1.url}}" alt="" class="img-fluid">
+            </div>
+
+            <h2 class="entry-title">
+              <a href="blog-single.html">{{post.title}}</a>
+            </h2>
+
+            <div class="entry-meta">
+              <ul>
+                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="">Admin</a></li>
+                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href=""><time datetime="2020-01-01">{{post.date}}</time></a></li>
+                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="">{{post.comments.count}}</a></li>
+              </ul>
+            </div>
+
+            <div class="entry-content">
+              <p>
+                {{post.body |truncatechars_html:50}}
+              </p>
+              <div class="read-more">
+                <a href="{% url 'post_details' id=post.id %}">Read More</a>
+              </div>
+            </div>
+
+          </article><!-- End blog entry -->
+          {% endfor %}
+    <!-- =====Pagination ===== -->
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center blog-pagination">
+              {% if posts.has_previous %}
+              <li class="page-item">
+                <a class="page-link" href="?p={{posts.previous_page_number}}">&laquo;</a>
+              </li>
+              {% endif %}
+              {% for n in num_of_pages %}
+              <li class="page-item">
+                <a class="page-link" href="?p={{n}}">{{n}}</a>
+              </li>
+              {% endfor %}
+              {% if posts.has_next %}
+              <li class="page-item">
+                <a class="page-link" href="?p={{posts.next_page_number}}">&raquo;</a>
+              </li>
+              {% endif %}
+            </ul>
+          </nav><!-- End of pagination-->
+
+        </div><!-- End blog entries list -->
+
+        <div class="col-lg-4">
+
+          <div class="sidebar">
+
+            <h3 class="sidebar-title">Search</h3>
+            <div class="sidebar-item search-form">
+              <form action="{% url 'search' %}" method= "get">
+                <input type="text" name="searchvalue" id="">
+                <button type="submit"><i class="bi bi-search"></i></button>
+              </form>
+            </div><!-- End sidebar search formn-->
+
+            <h3 class="sidebar-title">Recent Posts</h3>
+            <div class="sidebar-item recent-posts">
+              {% for post in latestposts %}
+              <div class="post-item clearfix">
+                <img src="{{post.pic1.url}}" alt="">
+                <h4><a href="{% url 'post_details' id=post.id %}">{{post.title}}</a></h4>
+                <time datetime="2020-01-01">{{post.date}}</time>
+              </div>
+              {% endfor %}
+            </div><!-- End sidebar recent posts-->
+          </div><!-- End sidebar -->
+
+        </div><!-- End blog sidebar -->
+
+      </div>
+
+    </div>
+  </section><!-- End Blog Section -->
+
+</main><!-- End #main -->
+{% endblock  %}

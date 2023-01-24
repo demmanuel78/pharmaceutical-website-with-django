@@ -1,0 +1,52 @@
+{% extends 'daitech/base.html' %}
+{% load static %}
+{% block pagetitle %}
+<title>Daitech Pharma | Our Sales and Marketing Team</title>
+{% endblock %}
+{% block body %}
+<main id="main">
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li>Our Sales and Marketing Team</li>
+      </ol>
+      <h2>Our Sales and Marketing Team</h2>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Team Section ======= -->
+  <section id="team" class="team">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member">
+            <img src="{% static 'daitech/img/Oladele.jpeg' %}" alt="">
+          <h4>OLADELE ODEBUNMI</h4>
+            <p><span>Position: </span>General Manager</p>
+            <p><i class="fas fa-phone-alt"></i>:+2348067818187,+2348091143591</p>
+            <p><i class="bi bi-envelope"></i><a href="mailto:oladele.odebunmi@daitechpharma.com">: oladele.odebunmi@daitechpharma.com</a></p>
+          </div>
+        </div>
+        {% for salesrep in salesreps %}
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member">
+            <img src="{{salesrep.pic.url}}" alt="">
+          <h4>{{salesrep.name}}</h4>
+            <p><span>Region: </span>{{salesrep.region}}</p>
+            <p><i class="fas fa-phone-alt"></i>: {{salesrep.phone1}} {% if salesrep.phone2 %},{{salesrep.phone2}}{% endif %}</p>
+            <p><i class="bi bi-envelope"></i><a href="mailto:{{salesrep.email}}">: {{salesrep.email}}</a></p>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+    </div>
+  </section><!-- End Team Section -->
+
+</main><!-- End #main -->
+{% endblock  %}

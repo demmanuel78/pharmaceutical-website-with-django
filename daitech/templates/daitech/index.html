@@ -1,0 +1,184 @@
+{% extends 'daitech/base.html' %}
+{% load static %}
+{% block pagetitle %}
+<title>Daitech Pharma | Home</title>
+{% endblock %}
+
+{% block body %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background: url({% static 'daitech/img/slide/slide1.jpg' %}); background-size: cover;">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__zoomIn" data-delay="500ms">Welcome to <span>Daitech Pharmaceuticals</span></h2>
+                <p class="animate__animated animate__fadeInLeft " data-delay="300ms">We provide first class formulations to cater to the need of patients at affordable prices. We have created a customer-centric system with our staff equipped with the requisite tools to deliver efficiency and  best-in-class service.</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background: url({% static 'daitech/img/slide/slide2.jpg' %}); background-size: cover;">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown" data-delay="100ms">Pharmaceutical Services that
+                  <br><span>You can Trust 100%</span></h2>
+                <p class="animate__animated animate__fadeInLeft" data-delay="200ms">We are a wholly indigenous healthcare company with special emphasis on sourcing and delivering quality healthcare products and services</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background: url({% static 'daitech/img/slide/slide-3.jpg' %}); background-size: cover;">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__backInRight" data-delay="100ms">A better way for<span> medicine</span></h2>
+                <p class="animate__animated animate__fadeInUp" data-delay="200ms">Our Aim is to help prevent and cure diseases by eliminating the need of the physician and prolong life.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Featured Section ======= -->
+    <section id="featured" class="featured">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="icon-box animate__animated animate__slideInLeft">
+              <i class="bi bi-card-checklist"></i>
+              <h3><a href="">New Technologies</a></h3>
+              <p>Using film coating to protect our formulations especially our anti-malaria.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="icon-box animate__animated animate__slideInUp">
+              <i class="bi bi-bar-chart"></i>
+              <h3><a href="">Dedicated Workforce</a></h3>
+              <p>Great individuals that are very dedicated to the improvement of the healthcare of their territories.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="icon-box animate__animated animate__slideInRight">
+              <i class="bi bi-binoculars"></i>
+              <h3><a href="">High Customer Satisfaction</a></h3>
+              <p>Wonderful feedback from doctors, pharmacists and their patients attesting to the efficacy of our products.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Featured Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" id="info">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{% static 'daitech/img/about.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content">
+            <h3>About us</h3>
+            <p>
+              Daitech pharmaceuticals was incorporated in Nigeria in December 2014.
+            </p>
+            <a class="btn-get-started" href="{% url 'companyinfo' %}">Read More</a>           
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="section-title">
+        <h2>Our Services</h2>
+      </div>  
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="icon-box animate__animated animate__slideInLeft">
+              <div class="icon"><i class="fas fa-database"></i></div>
+              <h4><a href="">Wholesales</a></h4>
+              <p>We supply wholesalers who in turn act as middlemen to retail pharmacies, hospitals, etc.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="icon-box animate__animated animate__slideInDown">
+              <div class="icon"><i class="fas fa-truck"></i></div>
+              <h4><a href="">Distribution</a></h4>
+              <p>We represent, distributes  and market products for International/Local brand that we are in partnership with using dedicated field force personnel.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="icon-box animate__animated animate__slideInRight">
+              <div class="icon"><i class="fas fa-bullhorn"></i></div>
+              <h4><a href="">Marketing</a></h4>
+              <p>We provide information by advertising and promoting our brands and product to the public as well as market and detail our products and services to healthcare professionals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="service-box text-center mt-5">
+          <button type="button" class="btn-lg ">
+            <a href="services.html"> <span>See All Services</span></a>
+          </button>
+        </div> 
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Clients</h2>
+          <p>Our clients include: multinationals, tertiary healthcare institutions, general hospitals, teaching hospitals, chain pharmacies, retail pharmacies, etc. </p>
+        </div>
+
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="{% static 'daitech/img/clients/client-1.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'daitech/img/clients/client-2.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'daitech/img/clients/client-3.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'daitech/img/clients/client-4.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'daitech/img/clients/client-5.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'daitech/img/clients/client-6.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'daitech/img/clients/client-7.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'daitech/img/clients/client-8.png' %}" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Clients Section -->
+
+  </main><!-- End #main -->
+
+{% endblock %}

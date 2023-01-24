@@ -1,0 +1,81 @@
+{% extends 'daitech/base.html' %}
+{% load static %}
+{% block pagetitle %}
+<title>Daitech Pharma | Our Servies</title>
+{% endblock %}
+{% block body %}
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li>Services</li>
+      </ol>
+      <h2>Services</h2>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="icon-box">
+            <div class="icon"><i class="fas fa-database"></i></div>
+            <h4><a href="">Wholesales</a></h4>
+            <p>We as wholesalers act as middlemen for retail Pharmacies, Hospitals and other Health institutions.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+          <div class="icon-box">
+            <div class="icon"><i class="fas fa-truck"></i></div>
+            <h4><a href="">Distribution</a></h4>
+            <p>We represents and distributes/Market products for International/Local brand that we are in partnership with using dedicated field force personnel.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+          <div class="icon-box">
+            <div class="icon"><i class="fas fa-bullhorn"></i></div>
+            <h4><a href="">Marketing</a></h4>
+            <p>We provide information by advertising and promoting our brands and product to the public.as well as market and detail our products and services to healthcare professionals.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="icon-box">
+            <div class="icon"><i class="fas fa-briefcase"></i></div>
+            <h4><a href="">Consulting</a></h4>
+            <p>We leverage our in-depth and cutting edge knowledge of the regulatory and compliance landscape to provide a range of pharmaceutical consulting.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-slideshow"></i></div>
+            <h4><a href="">Dele cardo</a></h4>
+            <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-arch"></i></div>
+            <h4><a href="">Divera don</a></h4>
+            <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
+</main><!-- End #main -->
+
+{% endblock  %}

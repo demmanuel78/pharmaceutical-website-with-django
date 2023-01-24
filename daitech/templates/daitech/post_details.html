@@ -1,0 +1,137 @@
+{% extends 'daitech/base.html' %}
+{% load static %}
+{% block pagetitle %}
+<title>Daitech Pharma | Events| Post details</title>
+{% endblock %}
+{% block body %}
+
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'events' %}">Events</a></li>
+      </ol>
+      <h2>Full information of the post</h2>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Blog Single Section ======= -->
+  <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-8 entries">
+
+          <article class="entry entry-single">
+
+            <div class="entry-img">
+              <img src="{{post.pic1.url}}" alt="" class="img-fluid">
+            </div>
+
+            <h2 class="entry-title">
+              <a href="blog-single.html">{{post.title}}</a>
+            </h2>
+
+            <div class="entry-meta">
+              <ul>
+                <li class="d-flex align-items-center"><i class="bi bi-person"></i>Admin</li>
+                <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2020-01-01">{{post.date}}</time></li>
+                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>{{post.comments.count}} Comments</li>
+              </ul>
+            </div>
+         
+            <div class="entry-content">
+              <p class="ml-1">
+                {{post.body}}
+              </p>
+              <img src="{{post.pic2.url}}" class="img-fluid" alt="">
+            </div>
+          </article><!-- End blog entry -->
+          <!-- ===Comment section ===-->
+          <div class="blog-comments">
+            <h4 class="comments-count">{{post.comments.count}}Comments</h4>
+            {% for comment in comments %}
+            <div id="comment-1" class="comment">
+              <div class="d-flex">
+                <div>
+                  <h5><a href="">{{comment.name}}</a></h5>
+                  <time datetime="2020-01-01">{{comment.date}}</time>
+                  <p>
+                    {{comment.comment}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}<!-- End comment -->
+
+            <div class="reply-form">
+              <h4>Leave a Reply</h4>
+              <p>Your email address will not be published. Required fields are marked * </p>
+              <form action="{% url 'post_details' id=post.id %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input name="name" type="text" class="form-control" placeholder="Your Name*">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <input name="email" type="text" class="form-control" placeholder="Your Email*">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col form-group">
+                    <input name="website" type="text" class="form-control" placeholder="Your Website">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col form-group">
+                    <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Post Comment</button>
+                {% for message in messages %}
+                  <p>{{message}}</p>
+                {% endfor %}
+
+              </form>
+
+            </div>
+
+          </div><!-- End blog comments -->
+
+        </div><!-- End blog entries list -->
+
+        <div class="col-lg-4">
+
+          <div class="sidebar">
+
+            <h3 class="sidebar-title">Search</h3>
+            <div class="sidebar-item search-form">
+              <form action="{% url 'search' %}" method="get">
+                <input type="text" name="searchvalue" id="">
+                <button type="submit"><i class="bi bi-search"></i></button>
+              </form>
+            </div><!-- End sidebar search formn-->
+
+            <h3 class="sidebar-title">Recent Posts</h3>
+            <div class="sidebar-item recent-posts">
+              {% for post in latestposts %}
+              <div class="post-item clearfix">
+                <img src="{{post.pic1.url}}" alt="">
+                <h4><a href="{% url 'post_details' id=post.id %}">{{post.title}}</a></h4>
+                <time datetime="2020-01-01">{{post.date}}</time>
+              </div>
+              {% endfor %}
+            </div><!-- End sidebar recent posts-->
+          </div><!-- End sidebar -->
+        </div><!-- End blog sidebar -->
+      </div>
+    </div>
+  </section><!-- End Blog Single Section -->
+</main><!-- End #main -->
+{% endblock  %}
